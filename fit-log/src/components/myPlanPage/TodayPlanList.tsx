@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { WorkoutContext } from "@/context/WorkoutsContext";
 import { useContext } from "react";
 

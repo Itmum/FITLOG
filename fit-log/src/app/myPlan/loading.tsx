@@ -1,4 +1,3 @@
-import React from "react";
 import { ImSpinner2 } from "react-icons/im";
 
 const loading = () => {
@@ -12,7 +11,7 @@ const loading = () => {
 
       <div className="text-center space-y-1">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-white">
-          Loading Library
+          Loading Workout
         </p>
         <p className="text-[#8B8D90] text-[11px] font-medium">
           Fetching data...

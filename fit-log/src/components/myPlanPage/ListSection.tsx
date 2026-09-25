@@ -12,7 +12,7 @@ const ListSection = () => {
   const { activeTab, setActiveTab } = tabProvider;
   return (
     <>
-      <div className="tabs tabs-lift">
+      <div className="tabs tabs-lift py-4 mt-4">
         <input
           type="radio"
           name="my_tabs_3"
