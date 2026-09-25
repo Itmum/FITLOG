@@ -4,6 +4,8 @@ import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NavplanBadge from "./NavplanBadge";
+import NavSavedBadge from "./NavSavedBadge";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -51,9 +53,7 @@ const Navbar = () => {
             <span className="text-sm font-medium text-[#8B8D90] group-hover:text-white transition-colors">
               <Link href="/myPlan">Plan</Link>
             </span>
-            <div className="w-5 h-5 rounded-full bg-[#B1FA10] text-[#0B0D12] text-xs font-bold flex items-center justify-center">
-              0
-            </div>
+            <NavplanBadge></NavplanBadge>
           </div>
 
           {/* Saved Indicator */}
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Link href="/myPlan">Saved</Link>
             </span>
             <div className="w-5 h-5 rounded-full bg-[#1A1D24] text-[#8B8D90] text-xs font-bold flex items-center justify-center border border-[#2D323F]">
-              0
+              <NavSavedBadge></NavSavedBadge>
             </div>
           </div>
 
