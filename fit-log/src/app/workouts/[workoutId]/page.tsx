@@ -76,9 +76,7 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
                 Equipment
               </span>
               <span className="font-semibold text-white">
-                {Array.isArray(workout.equipment)
-                  ? workout.equipment.join(", ")
-                  : "Free hand"}
+                {workout?.equipment || "Free hand"}
               </span>
             </div>
 
