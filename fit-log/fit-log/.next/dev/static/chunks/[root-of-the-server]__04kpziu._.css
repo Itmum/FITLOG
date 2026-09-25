@@ -3825,6 +3825,9 @@ html {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --lightningcss-light: ;
+    --lightningcss-dark: initial;
+    color-scheme: dark;
   }
 }
 
