@@ -6,7 +6,6 @@ const MyPlan = () => {
   return (
     <div className="bg-[#0B0D12] text-white py-12 px-4">
       <div className="container mx-auto">
-        {/* Header Block */}
         <div className="mb-6 space-y-1">
           <h1 className="text-3xl font-black tracking-tight uppercase">
             My Plan
@@ -16,7 +15,6 @@ const MyPlan = () => {
           </p>
         </div>
 
-        {/* Unified Dashboard Stat Panel */}
         <StatPannel></StatPannel>
         <ListSection></ListSection>
       </div>

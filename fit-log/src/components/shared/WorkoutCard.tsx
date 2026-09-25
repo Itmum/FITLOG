@@ -10,7 +10,6 @@ const WorkoutCard = ({ workout }: { workout: IWorkout }) => {
       key={workout.id}
       className="bg-[#111317] border border-[#1A1D24] rounded-2xl overflow-hidden flex flex-col group hover:border-[#2A303C] transition-colors"
     >
-      {/* Visual Canvas Block */}
       <div className="relative aspect-[16/10] w-full bg-[#181B22]">
         <Image
           src={workout.image}
@@ -22,10 +21,8 @@ const WorkoutCard = ({ workout }: { workout: IWorkout }) => {
         />
       </div>
 
-      {/* Information Descriptor Body */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div className="space-y-3">
-          {/* Dynamic Tag Track */}
           <div className="flex flex-wrap gap-1.5">
             {workout.muscleGroups?.map((tag: string, index: number) => (
               <span
@@ -37,7 +34,6 @@ const WorkoutCard = ({ workout }: { workout: IWorkout }) => {
             ))}
           </div>
 
-          {/* Exercise Nomenclature & Subtitles */}
           <div className="space-y-0.5">
             <h2 className="text-lg font-black uppercase tracking-tight text-white leading-tight">
               {workout.name}
@@ -50,21 +46,17 @@ const WorkoutCard = ({ workout }: { workout: IWorkout }) => {
           </div>
         </div>
 
-        {/* Horizontal Divider Line & Footer Telemetry */}
         <div className="border-t border-[#1A1D24] pt-3 flex items-center justify-between text-[#8B8D90] text-xs font-semibold">
-          {/* Time Metric */}
           <div className="flex items-center gap-1.5">
             <FaRegClock size={14} color="#8B8D90" />
             <span>{workout.duration || "20"} min</span>
           </div>
 
-          {/* Calorie Burn Metric */}
           <div className="flex items-center gap-1.5">
             <FaFireFlameCurved size={14} color="#8B8D90" />
             <span>{workout.caloriesBurned || "150"} kcal</span>
           </div>
 
-          {/* Rating Telemetry */}
           <div className="flex items-center gap-1.5">
             <FaRegStar size={14} color="#8B8D90" />
             <span>{workout.rating?.toFixed(1) || "4.5"}</span>

@@ -35,20 +35,16 @@ const Navbar = () => {
   return (
     <div className="bg-[#0B0D12] text-white border-b border-[#1A1D24] sticky top-0 z-100">
       <div className="navbar container mx-auto px-4 min-h-[64px] flex justify-between items-center">
-        {/* Left Section: Your Custom Logo Slot */}
         <Link href="/" className="flex items-center">
           <Image src={logo} alt="logo"></Image>
           <span className="font-bold text-sm tracking-wider">FITLOG</span>
         </Link>
 
-        {/* Center Section: Desktop Navigation */}
         <div className="hidden md:flex flex-1 justify-center">
           <ul className="menu menu-horizontal gap-2 p-0">{links}</ul>
         </div>
 
-        {/* Right Section: Badges & Mobile Hamburger Menu */}
         <div className="flex items-center gap-4">
-          {/* Plan Indicator */}
           <div className="flex items-center gap-1.5 cursor-pointer group">
             <span className="text-sm font-medium text-[#8B8D90] group-hover:text-white transition-colors">
               <Link href="/myPlan">Plan</Link>
@@ -56,7 +52,6 @@ const Navbar = () => {
             <NavplanBadge></NavplanBadge>
           </div>
 
-          {/* Saved Indicator */}
           <div className="flex items-center gap-1.5 cursor-pointer group">
             <span className="text-sm font-medium text-[#8B8D90] group-hover:text-white transition-colors">
               <Link href="/myPlan">Saved</Link>
@@ -66,7 +61,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Corrected Mobile Hamburger Dropdown */}
           <div className="dropdown dropdown-end md:hidden">
             <div
               tabIndex={0}

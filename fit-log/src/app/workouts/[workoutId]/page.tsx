@@ -2,9 +2,6 @@ import AddToPlanButton from "@/components/workoutDetailPage/AddToPlanButton";
 import AddToSavelistButton from "@/components/workoutDetailPage/AddToSavelistButton";
 import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
-import React from "react";
-// Importing the precise React Icons shown in your design image
-import { FaCalendarPlus, FaRegBookmark } from "react-icons/fa6";
 
 interface workoutDetailPageProps {
   params: Promise<{ workoutId: string }>;
@@ -40,7 +37,6 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
   return (
     <div className="bg-[#0B0D12] text-white min-h-screen py-10 px-4 md:px-8 flex items-center justify-center">
       <div className="container mx-auto  flex flex-col md:flex-row gap-10 items-stretch">
-        {/* Left Aspect: Workout Image Box */}
         <div className="flex-1 relative aspect-square md:aspect-auto min-h-[350px] md:min-h-[500px] w-full rounded-2xl overflow-hidden bg-[#181B22]">
           <Image
             src={workout.image}
@@ -52,9 +48,7 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
           />
         </div>
 
-        {/* Right Aspect: Metadata Panels & Details */}
         <div className="flex-1 flex flex-col justify-between space-y-6">
-          {/* Header Typography Group */}
           <div className="space-y-3">
             <h1 className="text-3xl md:text-4xl font-black tracking-tight uppercase leading-none">
               {workout.name}
@@ -64,7 +58,6 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
                 "A compound press that builds chest thickness, triceps, and pressing power from a stable bench."}
             </p>
 
-            {/* Dynamic Pill Tags */}
             <div className="flex flex-wrap gap-2 pt-1">
               {workout.muscleGroups?.map((tag: string, idx: number) => (
                 <span
@@ -77,7 +70,6 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
             </div>
           </div>
 
-          {/* Matrix Specifications List */}
           <div className="border-y border-[#1A1D24] divide-y divide-[#1A1D24]/50 text-sm">
             <div className="flex justify-between py-2.5">
               <span className="text-[#8B8D90] uppercase font-bold text-xs tracking-wider">
@@ -145,7 +137,6 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
             </div>
           </div>
 
-          {/* Instructions Step-by-Step Block */}
           <div className="space-y-3">
             <h3 className="text-sm font-black uppercase tracking-wider text-white">
               Instructions

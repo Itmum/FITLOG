@@ -2,7 +2,7 @@
 import { TabContext } from "@/context/TabContext";
 import { WorkoutContext } from "@/context/WorkoutsContext";
 import { IWorkout } from "@/types/workout.type";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaCheck } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { toast } from "react-toastify";

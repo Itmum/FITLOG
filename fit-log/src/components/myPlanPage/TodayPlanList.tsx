@@ -1,12 +1,7 @@
 "use client";
 import { WorkoutContext } from "@/context/WorkoutsContext";
-import Link from "next/link";
-import React, { useContext } from "react";
-import WorkoutCard from "../shared/WorkoutCard";
-import Image from "next/image";
-import { FaCheck, FaRegClock, FaRegStar } from "react-icons/fa";
-import { FaFireFlameCurved } from "react-icons/fa6";
-import { IoClose } from "react-icons/io5";
+import { useContext } from "react";
+
 import ListItem from "./ListItem";
 import EmptyList from "./EmptyList";
 

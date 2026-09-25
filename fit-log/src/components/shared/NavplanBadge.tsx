@@ -1,6 +1,5 @@
 import { WorkoutContext } from "@/context/WorkoutsContext";
-import React, { useContext } from "react";
-import SavedList from "../myPlanPage/SavedList";
+import { useContext } from "react";
 
 const NavplanBadge = () => {
   const workoutProvider = useContext(WorkoutContext);
