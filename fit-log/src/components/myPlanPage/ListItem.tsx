@@ -5,6 +5,7 @@ import React from "react";
 import { FaCheck, FaRegClock, FaRegStar } from "react-icons/fa";
 import { FaFireFlameCurved } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import RemoveButtons from "./removeButtons";
 
 const ListItem = ({ workout }: { workout: IWorkout }) => {
   return (
@@ -63,20 +64,7 @@ const ListItem = ({ workout }: { workout: IWorkout }) => {
         >
           View Details
         </Link>
-
-        {/* Neon Mark As Done Button */}
-        <button className="btn btn-xs sm:btn-xs bg-[#B1FA10] hover:bg-[#a2e60e] text-[#0B0D12] text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full border-none px-3 sm:px-4 h-8 sm:h-9 min-h-0 flex items-center justify-center gap-1 sm:gap-1.5 shadow-[0_4px_12px_rgba(177,250,16,0.15)] cursor-pointer">
-          <FaCheck className="text-[10px] sm:text-xs stroke-[2px]" />
-          <span>Mark as Done</span>
-        </button>
-
-        {/* Plan Dismiss Cross Icon (Always explicitly inline at the end of the line) */}
-        <button
-          className="text-[#4A4E57] hover:text-rose-400 p-1 sm:p-1.5 rounded-lg transition-colors cursor-pointer ml-1 sm:ml-0"
-          aria-label="Remove item"
-        >
-          <IoClose className="w-5 h-5" />
-        </button>
+        <RemoveButtons workout={workout}></RemoveButtons>
       </div>
     </div>
   );

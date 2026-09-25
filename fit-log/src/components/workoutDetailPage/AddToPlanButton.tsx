@@ -3,6 +3,7 @@ import { WorkoutContext } from "@/context/WorkoutsContext";
 import { IWorkout } from "@/types/workout.type";
 import React, { useContext } from "react";
 import { FaCalendarPlus } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const AddToPlanButton = ({ workout }: { workout: IWorkout }) => {
   const workoutProvider = useContext(WorkoutContext);
@@ -13,10 +14,12 @@ const AddToPlanButton = ({ workout }: { workout: IWorkout }) => {
   const isAlreadyAdded = planList.some((i) => i.id === workout.id);
   const handleAddToPlanButton = () => {
     if (isAlreadyAdded) {
-      alert(`${workout.name} is Already in your plan`);
+      toast.error(`${workout.name} is Already in your plan`);
+      //   alert(`${workout.name} is Already in your plan`);
       return;
     }
     setPlanList([...planList, workout]);
+    toast.success(`${workout.name} is successfully added to your Plan`);
   };
   console.log("add to plan clicked, udated planList = ", planList);
   return (

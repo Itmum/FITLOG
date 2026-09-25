@@ -3,6 +3,7 @@ import { WorkoutContext } from "@/context/WorkoutsContext";
 import { IWorkout } from "@/types/workout.type";
 import React, { useContext } from "react";
 import { FaRegBookmark } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const AddToSavelistButton = ({ workout }: { workout: IWorkout }) => {
   const workoutProvider = useContext(WorkoutContext);
@@ -13,10 +14,12 @@ const AddToSavelistButton = ({ workout }: { workout: IWorkout }) => {
   const isAlreadyAdded = savedList.some((i) => i.id === workout.id);
   const handleAddToPlanButton = () => {
     if (isAlreadyAdded) {
-      alert(`${workout.name} is Already in your plan`);
+      toast.error(`${workout.name} is Already in your Saveed List`);
+      //   alert(`${workout.name} is Already in your plan`);
       return;
     }
     setSavedlist([...savedList, workout]);
+    toast.success(`${workout.name} is successfully Saved`);
   };
   console.log("add to savelist clicked, udated save list = ", savedList);
   return (
