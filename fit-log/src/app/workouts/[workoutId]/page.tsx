@@ -1,3 +1,5 @@
+import AddToPlanButton from "@/components/workoutDetailPage/AddToPlanButton";
+import AddToSavelistButton from "@/components/workoutDetailPage/AddToSavelistButton";
 import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
 import React from "react";
@@ -84,7 +86,7 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
               <span className="font-semibold text-white">
                 {Array.isArray(workout.equipment)
                   ? workout.equipment.join(", ")
-                  : workout.equipment || "Barbell, Bench"}
+                  : "Free hand"}
               </span>
             </div>
 
@@ -149,56 +151,21 @@ const WorkoutDetailPage = async ({ params }: workoutDetailPageProps) => {
               Instructions
             </h3>
             <ol className="text-xs md:text-sm text-[#8B8D90] space-y-2 list-decimal list-inside pl-1 leading-relaxed">
-              {workout.instructions && workout.instructions.length > 0 ? (
+              {workout.instructions.length > 0 ? (
                 workout.instructions.map((step: string, index: number) => (
                   <li key={index} className="pl-1">
                     <span className="text-gray-300">{step}</span>
                   </li>
                 ))
               ) : (
-                <>
-                  <li>
-                    <span className="text-gray-300">
-                      Lie on the bench with eyes under the bar and feet planted.
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-gray-300">
-                      Unrack with locked elbows and lower the bar to mid-chest.
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-gray-300">
-                      Press up in a slight arc until elbows lock without
-                      bouncing.
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-gray-300">
-                      Keep shoulder blades pinched and a natural arch in the
-                      back.
-                    </span>
-                  </li>
-                </>
+                <h2>DO IT YOURSELF</h2>
               )}
             </ol>
           </div>
 
-          {/* Action Call Controls Group Using React Icons */}
           <div className="flex flex-wrap gap-3 pt-4">
-            <button className="flex items-center gap-2 bg-[#B1FA10] text-[#0B0D12] hover:bg-[#a2e60e] font-black text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-              <span className="text-base">
-                <FaCalendarPlus />
-              </span>
-              Add to today&apos;s plan
-            </button>
-
-            <button className="flex items-center gap-2 bg-[#111317] hover:bg-[#1A1D24] text-gray-300 hover:text-white border border-[#1A1D24] font-black text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors cursor-pointer">
-              <span className="text-base">
-                <FaRegBookmark />
-              </span>
-              Save for later
-            </button>
+            <AddToPlanButton workout={workout}></AddToPlanButton>
+            <AddToSavelistButton workout={workout}></AddToSavelistButton>
           </div>
         </div>
       </div>

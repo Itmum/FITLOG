@@ -1,30 +1,37 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  // Navigation links styled to fit both desktop horizontal rows and mobile vertical lists cleanly
+  const pathName = usePathname();
+  const getLinkClass = (targetPath: string) => {
+    const isActive = targetPath === pathName;
+    if (isActive === true) {
+      return `bg-[#1C240E] text-[#B1FA10] font-semibold px-4 py-2 rounded-full text-sm block md:inline-block text-center`;
+    } else {
+      return `font-semibold px-4 py-2 text-sm text-center rounded-full transition-all duration-200 block md:inline-block text-[#8B8D90] hover:text-white hover:bg-neutral-800/30`;
+    }
+  };
   const links = (
     <>
       <li>
-        <Link
-          href="/"
-          className="bg-[#1C240E] text-[#B1FA10] font-semibold px-4 py-2 rounded-full text-sm block md:inline-block text-center"
-        >
+        <Link href="/" className={getLinkClass("/")}>
           Workouts
         </Link>
       </li>
       <li>
-        <a className="text-[#8B8D90] font-semibold hover:text-white px-4 py-2 text-sm transition-colors block md:inline-block text-center rounded-full hover:bg-neutral-800/30">
-          My Plan
-        </a>
+        <Link href="/myPlan" className={getLinkClass("/myPlan")}>
+          My plan
+        </Link>
       </li>
     </>
   );
 
   return (
-    <div className="bg-[#0B0D12] text-white border-b border-[#1A1D24]">
+    <div className="bg-[#0B0D12] text-white border-b border-[#1A1D24] sticky top-0 z-100">
       <div className="navbar container mx-auto px-4 min-h-[64px] flex justify-between items-center">
         {/* Left Section: Your Custom Logo Slot */}
         <Link href="/" className="flex items-center">
@@ -42,7 +49,7 @@ const Navbar = () => {
           {/* Plan Indicator */}
           <div className="flex items-center gap-1.5 cursor-pointer group">
             <span className="text-sm font-medium text-[#8B8D90] group-hover:text-white transition-colors">
-              Plan
+              <Link href="/myPlan">Plan</Link>
             </span>
             <div className="w-5 h-5 rounded-full bg-[#B1FA10] text-[#0B0D12] text-xs font-bold flex items-center justify-center">
               0
@@ -52,7 +59,7 @@ const Navbar = () => {
           {/* Saved Indicator */}
           <div className="flex items-center gap-1.5 cursor-pointer group">
             <span className="text-sm font-medium text-[#8B8D90] group-hover:text-white transition-colors">
-              Saved
+              <Link href="/myPlan">Saved</Link>
             </span>
             <div className="w-5 h-5 rounded-full bg-[#1A1D24] text-[#8B8D90] text-xs font-bold flex items-center justify-center border border-[#2D323F]">
               0
