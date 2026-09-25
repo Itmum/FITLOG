@@ -1,6 +1,5 @@
 import ListSection from "@/components/myPlanPage/ListSection";
 import StatPannel from "@/components/myPlanPage/StatPannel";
-import React from "react";
 
 const MyPlan = () => {
   return (
